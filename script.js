@@ -1,68 +1,40 @@
-let url1 = "https://api.postalpincode.in/pincode/"
-let url2 = "https://api.postalpincode.in/postoffice/"
+const url ="https://inshortsapi.vercel.app/news?category="
 
-async function getdataBypin(){
-    let num = document.querySelector(".pin").value
-    console.log(num)
-    let data = await fetch(`${url1}/${num}`,{method:"GET"})
-    let details = await data.json()
-    // console.log(details)
-    return details
-}
-
-async function getdata(){
-    let state = document.querySelector(".state").value
-    console.log(state)
-
-    let data = await fetch(`${url2}/${state}`,{method:"GET"})
-    let details = await data.json()
-    // console.log(details)
-    return details
+async function getdata(catagory){
+    let resdata = await fetch(url+`${catagory}`, {method:"GET"})
+    let jsdata = await resdata.json()
+    return jsdata
+    
 }
 
 
+async function newsdisplay(catagory){
 
-async function display(key){
-    let addressdata =[] 
-    try {
-    if(key== "pin"){
-         addressdata = await getdataBypin()
-    }    
-    else if(key== "name"){
-         addressdata = await getdata()
-    }    
+    let newsdata = await getdata(catagory)
+    let newsdisplay = document.querySelector(".display")  
+    newsdisplay.innerHTML= '' //Wipping the data
     
-    
-    let address = addressdata[0].PostOffice
-
-    let displaydata = document.querySelector(".details")
-    displaydata.innerHTML =''
-    address.map((response)=>{
-        // console.log(response.PostOffice[0].Name)
-        displaydata.innerHTML+=
-        ` <div class="col-12 col-sm-12 col-md-6 offset-md-2 col-lg-6 offset-lg-0 col-xl-3 col-xxl-3 addressdetails">
-        <ul class="list-group border border-primary ">
-            <li class="list-group-item">Name: ${response.Name}</li>
-           
-            <li class="list-group-item">BranchType: ${response.BranchType}</li>
-            <li class="list-group-item">DeliveryStatus: ${response.DeliveryStatus}</li>
-            <li class="list-group-item">Circle: ${response.Circle}</li>
-            <li class="list-group-item">District: ${response.District}</li>
-            <li class="list-group-item">Division: ${response.Division}</li>
-            <li class="list-group-item">Region: ${response.Region}</li>
-            <li class="list-group-item">Block: ${response.Block}</li>
-            <li class="list-group-item">State: ${response.State}</li>
-            <li class="list-group-item">Country: ${response.Country}</li>
-            <li class="list-group-item">Pincode: ${response.Pincode}</li>
-            </ul>
+    //Displaying news  
+    newsdata.data.map((e)=>{
+        newsdisplay.innerHTML+=` 
+        <div class="card">
+            <div class="flexs">
+            <div>
+                <img src="${e.imageUrl}" class="card-img-top images" alt="...">
+            </div>    
+            <div class="card-body">
+                <h5 class="card-title">${e.title}</h5>
+                <p class="card-text">${e.content}</p>
+                <div class="row">
+                <div class="col">
+                <a href="${e.readMoreUrl}" class="btn btn-primary">Read More</a>
+                </div>
+                <div class="col">
+                --${e.author}
             </div>
+            </div>
+        </div>
         `
-
     })
-} catch (error) {
-    let displaydata = document.querySelector(".details")
-displaydata.innerHTML =`<div class="Nodata">
-<h1>Please enter valid data </h1>
-</div>`
 }
-}
+newsdisplay('all')
