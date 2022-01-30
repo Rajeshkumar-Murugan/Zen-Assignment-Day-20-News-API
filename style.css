@@ -1,40 +1,56 @@
-.pic{
-    height: 230px;
-    padding-bottom: 20px;
-    width: 320px
-}
-.logo{
-    display: flex;
-    align-content: center;
-    flex-direction: row;
-    justify-content: space-around;
-   
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .header{
-    background-color: #cc0001;
-}
-
-.addressdetails{
-    padding: 10px;
-    margin: 0px;
-}
-
-.textbox{
-    padding-top: 30px;
-}
-
-.Nodata{
-    padding-top: 40px;
+    font-size: 50px;
+    font-family: 'Exo 2', sans-serif;
     text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(to left, #ff0000, #ff3d66, #ff75ad, #ffa6e0, #f8d1fc, #eed5ff, #e5d9ff, #dedcfe, #c0c3fe, #9dabfe, #6f95ff, #0081ff);
 }
 
-.btn{
-    height: 80px;
+.images{
+    height: 250px;
+    width: 100%;   
 }
+
+.card{
+    width: 25rem;
+    margin: 10px;    
+}
+
+
+
+@media (min-width: 653px) {
+
+    .images{
+        height: 250px;
+        width: 250px;    
+    }
+    
+    .card{
+        width: 100%;
+        margin: 10px;       
+    }
+    .flexs{
+        display: flex;
+    }
+     
+ }
+
+ @media (min-width: 1181px) {
+
+    .images{
+        height: 250px;
+        width: 100%;        
+    }  
+    .card{
+        width: 25rem;
+        margin: 10px;          
+    }
+    .flexs{
+        display: flex;
+        flex-direction: column;
+    }
+     
+ }
