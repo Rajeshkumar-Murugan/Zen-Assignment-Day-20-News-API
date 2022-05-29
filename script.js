@@ -1,4 +1,4 @@
-const url ="https://inshortsapi.vercel.app/news?category="
+const url ="https://inshorts-api.herokuapp.com/news?category="
 
 async function getdata(catagory){
     let resdata = await fetch(url+`${catagory}`, {method:"GET"})
