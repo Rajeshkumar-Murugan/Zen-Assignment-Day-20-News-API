@@ -1,19 +1,35 @@
-const url ="https://inshorts-api.herokuapp.com/news?category="
+const url ="https://inshortsapi.vercel.app/news?category="
 
 async function getdata(catagory){
+    let newsdisplay = document.querySelector(".display") 
+    newsdisplay.innerHTML=`<div >
+    <center>
+    <img  src="https://marsleevamedicity.com/wp-content/uploads/2021/01/loading-please-wait-icon-22.gif" 
+     alt="..."/>
+     <center/>
+    
+    </div>`
+
     let resdata = await fetch(url+`${catagory}`, {method:"GET"})
+    console.log(resdata)
+    // if(!resdata){
+    //     
+    // }
     let jsdata = await resdata.json()
     return jsdata
     
 }
 
 
+
 async function newsdisplay(catagory){
 
+
+    
     let newsdata = await getdata(catagory)
     let newsdisplay = document.querySelector(".display")  
     newsdisplay.innerHTML= '' //Wipping the data
-    
+     
     //Displaying news  
     newsdata.data.map((e)=>{
         newsdisplay.innerHTML+=` 
