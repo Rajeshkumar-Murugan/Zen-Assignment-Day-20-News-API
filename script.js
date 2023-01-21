@@ -4,7 +4,7 @@ async function getdata(catagory){
     let display = document.querySelector(".display") 
     display.innerHTML=`<div >
     <center>
-    <img  src="https://marsleevamedicity.com/wp-content/uploads/2021/01/loading-please-wait-icon-22.gif" 
+    <img  src="https://i.pinimg.com/originals/7e/4d/c4/7e4dc49c0a189260eb678a49be2c686b.gif" 
      alt="..."/>
      <center/>
     
