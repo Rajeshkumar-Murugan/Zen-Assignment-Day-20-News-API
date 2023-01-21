@@ -74,44 +74,44 @@ function myFunction(x) {
           
           <!-- <ul class="nav nav-tabs" id="myTab" role="tablist"> -->
             <li class="nav-item" role="presentation">
-              <a class="nav-link active btn-lg"  data-bs-toggle="tab" aria-current="page" href="#" onclick="newsdisplay('all')">All</a>
+              <a class="nav-link active btn-lg" data-bs-dismiss="offcanvas" data-bs-toggle="tab" aria-current="page" href="#" onclick="newsdisplay('all')">All</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link btn-lg" data-bs-toggle="tab" href="#"onclick="newsdisplay('national')">National</a>
+              <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#"onclick="newsdisplay('national')">National</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('business')">Business</a>
+              <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('business')">Business</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('sports')">Sports</a>
+              <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('sports')">Sports</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link btn-lg "  data-bs-toggle="tab" href="#" onclick="newsdisplay('world')">World</a>
+                <a class="nav-link btn-lg " data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('world')">World</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('politics')">Politics</a>
+                <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('politics')">Politics</a>
               </li>
               <li class="nav-item" >
-                <a class="nav-link btn-lg"  data-bs-toggle="tab" href="#" onclick="newsdisplay('technology')">Technology</a>
+                <a class="nav-link btn-lg" data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('technology')">Technology</a>
               </li> <li class="nav-item">
-                <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('startup')">Startup</a>
+                <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('startup')">Startup</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('entertainment')">Entertainment
+                <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('entertainment')">Entertainment
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-lg"  data-bs-toggle="tab" href="#"  onclick="newsdisplay('miscellaneous')">Miscellaneous
+                <a class="nav-link btn-lg" data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#"  onclick="newsdisplay('miscellaneous')">Miscellaneous
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('hatke')">Hatke</a>
+                <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('hatke')">Hatke</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-lg"  data-bs-toggle="tab" href="#" onclick="newsdisplay('science')">Science</a>
+                <a class="nav-link btn-lg" data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('science')">Science</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('automobile')">Automobile</a>
+                <a class="nav-link btn-lg"data-bs-dismiss="offcanvas" data-bs-toggle="tab" href="#" onclick="newsdisplay('automobile')">Automobile</a>
               </li>
             
           <!-- </ul> -->
