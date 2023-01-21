@@ -1,8 +1,8 @@
 const url ="https://inshortsapi.vercel.app/news?category="
 
 async function getdata(catagory){
-    let newsdisplay = document.querySelector(".display") 
-    newsdisplay.innerHTML=`<div >
+    let display = document.querySelector(".display") 
+    display.innerHTML=`<div >
     <center>
     <img  src="https://marsleevamedicity.com/wp-content/uploads/2021/01/loading-please-wait-icon-22.gif" 
      alt="..."/>
@@ -12,9 +12,6 @@ async function getdata(catagory){
 
     let resdata = await fetch(url+`${catagory}`, {method:"GET"})
     console.log(resdata)
-    // if(!resdata){
-    //     
-    // }
     let jsdata = await resdata.json()
     return jsdata
     

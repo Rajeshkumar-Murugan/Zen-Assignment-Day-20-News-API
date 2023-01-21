@@ -3,7 +3,6 @@
     font-family: 'Exo 2', sans-serif;
     text-align: center;
     color: rgb(0, 0, 0);
-    padding: 20px;
     display: flex;
     justify-content: space-around;
     background-image: linear-gradient(to left, #ff0000, #ff3d66, #ff75ad, #ffa6e0, #f8d1fc, #eed5ff, #e5d9ff, #dedcfe, #c0c3fe, #9dabfe, #6f95ff, #0081ff);
