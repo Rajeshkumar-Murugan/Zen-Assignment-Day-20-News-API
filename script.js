@@ -63,7 +63,7 @@ function myFunction(x) {
     </br>
     <nav class="navbar navbar-dark bg-dark fixed-top ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Todays News</a>
+    <a class="navbar-brand" href="#">Today's News</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -130,7 +130,7 @@ function myFunction(x) {
     document.querySelector(".menu").innerHTML = `
 
     <div class="header">
-    <p><b>TODAYS NEWS</b></p>
+    <p><b>Today's News</b></p>
     </div>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
