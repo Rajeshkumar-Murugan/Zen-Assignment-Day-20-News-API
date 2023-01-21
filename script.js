@@ -3,10 +3,13 @@ const url ="https://inshortsapi.vercel.app/news?category="
 async function getdata(catagory){
     let display = document.querySelector(".display") 
     display.innerHTML=`<div >
-    <center>
+
+    <div class="position-absolute top-50 start-50 translate-middle">
     <img  src="https://i.pinimg.com/originals/7e/4d/c4/7e4dc49c0a189260eb678a49be2c686b.gif" 
-     alt="..."/>
-     <center/>
+     alt="..." style="width:300px;"/>
+    </div>
+
+    
     
     </div>`
 
