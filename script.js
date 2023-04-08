@@ -1,42 +1,31 @@
-const url ="https://inshortsapi.vercel.app/news?category="
+const url = "https://inshortsapi.vercel.app/news?category=";
 
-async function getdata(catagory){
-    let display = document.querySelector(".display") 
-    display.innerHTML=`<div >
+async function getdata(catagory) {
+  let display = document.querySelector(".display");
+  display.innerHTML = `<div >
 
     <div class="position-absolute top-50 start-50 translate-middle">
     <img  src="https://i.pinimg.com/originals/7e/4d/c4/7e4dc49c0a189260eb678a49be2c686b.gif" 
      alt="..." style="width:300px;"/>
-    </div>
-
-    
-    
-    </div>`
-
-    let resdata = await fetch(url+`${catagory}`, {method:"GET"})
-    console.log(resdata)
-    let jsdata = await resdata.json()
-    return jsdata
-    
+    </div> 
+    </div>`;
+  let resdata = await fetch(url + `${catagory}`, { method: "GET" });
+  console.log(resdata);
+  let jsdata = await resdata.json();
+  return jsdata;
 }
 
-
-
-async function newsdisplay(catagory){
-
-
-    
-    let newsdata = await getdata(catagory)
-    let newsdisplay = document.querySelector(".display")  
-    newsdisplay.innerHTML= '' //Wipping the data
-     
-    //Displaying news  
-    newsdata.data.map((e)=>{
-        newsdisplay.innerHTML+=` 
+async function newsdisplay(catagory) {
+  let newsdata = await getdata(catagory);
+  let newsdisplay = document.querySelector(".display");
+  newsdisplay.innerHTML = ""; //Wipping the data
+  //Displaying news
+  newsdata.data.map((e) => {
+    newsdisplay.innerHTML += ` 
         <div class="card">
             <div class="flexs">
             <div>
-                <img src="${e.imageUrl}" class="card-img-top images" alt="...">
+                <img src="${e.imageUrl}" class="card-img-top images" alt="..." >
             </div>    
             <div class="card-body">
                 <h5 class="card-title">${e.title}</h5>
@@ -50,13 +39,14 @@ async function newsdisplay(catagory){
             </div>
             </div>
         </div>
-        `
-    })
+        `;
+  });
 }
-newsdisplay('all')
+newsdisplay("all");
 
 function myFunction(x) {
-  if (x.matches) { // If media query matches
+  if (x.matches) {
+    // If media query matches
     document.querySelector(".menu").innerHTML = `
     </br>
     </br>
@@ -120,12 +110,16 @@ function myFunction(x) {
           <!-- </ul> -->
 
         </ul>
-        
+        <div class="searchset">
+        <input class="form-control mr-sm-2" id="searchdata" type="search" placeholder="Search" aria-label="Search">
+        &nbsp;
+        <button class="btn btn-outline-success my-2 my-sm-0" onclick="searchnews()" data-bs-dismiss="offcanvas">Search</button>
+      </div>
       </div>
     </div>
   </div>
 </nav>
-    `
+    `;
   } else {
     document.querySelector(".menu").innerHTML = `
 
@@ -173,12 +167,80 @@ function myFunction(x) {
               <li class="nav-item">
                 <a class="nav-link btn-lg" data-bs-toggle="tab" href="#" onclick="newsdisplay('automobile')">Automobile</a>
               </li>
-            
+              
+          
+              <form onsubmit="event.preventDefault(); searchnews()" class="searchset">
+              <input class="form-control mr-sm-2" id="searchdata" type="search" placeholder="Search" aria-label="Search">
+              &nbsp;
+              <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Submit">
+              </form>
+           
+           
           </ul>
-    `
+         
+    `;
   }
 }
 
-var x = window.matchMedia("(max-width: 700px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
+
+async function searchnews()
+{
+ var newsdisplay = document.querySelector(".display")
+ newsdisplay.innerHTML = `<div >
+
+   <div class="position-absolute top-50 start-50 translate-middle">
+   <img  src="https://i.pinimg.com/originals/7e/4d/c4/7e4dc49c0a189260eb678a49be2c686b.gif" 
+    alt="..." style="width:300px;"/>
+   </div> 
+   </div>`;
+ 
+ 
+
+const urlall ="https://newsapi.org/v2/everything?q="
+const apidata = "&from=2023-03-08&sortBy=publishedAt&apiKey=4f2defb0fc244f38ac04195d373a3f8b"
+
+    var searchdata = document.querySelector("#searchdata").value
+    var response = await fetch(urlall+searchdata+apidata, {method:"GET"})
+    var responseJson = await response.json()
+    // console.log(responseJson.articles)
+    newsdisplay.innerHTML =``
+    var imageID = 0
+    responseJson.articles.map((e) => {
+      
+      newsdisplay.innerHTML += `
+          <div class="card">
+              <div class="flexs">
+              <div>
+                  <img src="${e.urlToImage}" class="card-img-top images" id=${imageID}>
+              </div>    
+              <div class="card-body">
+                  <h5 class="card-title">${e.title}</h5>
+                  <p class="card-text">${e.description}</p>
+                  <div class="row">
+                  <div class="col">
+                  <a href="${e.url}" class="btn btn-primary">Read More</a>
+                  </div>
+                  <div class="col">
+                  --${e.author}
+              </div>
+              </div>
+          </div>
+          `;
+          
+          imageNotfound(imageID);
+          imageID++;
+    });
+
+}
+
+function imageNotfound(id)
+{
+  document.getElementById(id).onerror = function() { 
+    document.getElementById(id).src = "https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png"
+  }
+}
+
+
+var x = window.matchMedia("(max-width: 700px)");
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes

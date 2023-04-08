@@ -9,7 +9,7 @@
 }
 
 .images{
-    height: 250px;
+    height: 250px !important;
     width: 100%;   
 }
 
@@ -23,8 +23,8 @@
 @media (min-width: 653px) {
 
     .images{
-        height: 250px;
-        width: 250px;    
+        height: 250px !important;
+        width: 250px;   
     }
     
     .card{
@@ -40,7 +40,7 @@
  @media (min-width: 1181px) {
 
     .images{
-        height: 250px;
+        height: 250px !important;
         width: 100%;        
     }  
     .card{
@@ -54,5 +54,6 @@
      
  }
 
-
- 
+ .searchset{
+    display: flex;
+ }
