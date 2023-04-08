@@ -110,11 +110,7 @@ function myFunction(x) {
           <!-- </ul> -->
 
         </ul>
-        <div class="searchset">
-        <input class="form-control mr-sm-2" id="searchdata" type="search" placeholder="Search" aria-label="Search">
-        &nbsp;
-        <button class="btn btn-outline-success my-2 my-sm-0" onclick="searchnews()" data-bs-dismiss="offcanvas">Search</button>
-      </div>
+       
       </div>
     </div>
   </div>
@@ -169,11 +165,7 @@ function myFunction(x) {
               </li>
               
           
-              <form onsubmit="event.preventDefault(); searchnews()" class="searchset">
-              <input class="form-control mr-sm-2" id="searchdata" type="search" placeholder="Search" aria-label="Search">
-              &nbsp;
-              <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Submit">
-              </form>
+              
            
            
           </ul>
@@ -182,7 +174,11 @@ function myFunction(x) {
   }
 }
 
-
+{/* <form onsubmit="event.preventDefault(); searchnews()" class="searchset">
+              <input class="form-control mr-sm-2" id="searchdata" type="search" placeholder="Search" aria-label="Search">
+              &nbsp;
+              <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Submit">
+              </form> */}
 async function searchnews()
 {
  var newsdisplay = document.querySelector(".display")
@@ -196,8 +192,8 @@ async function searchnews()
  
  
 
-const urlall ="https://newsapi.org/v2/everything?q="
-const apidata = "&from=2023-03-08&sortBy=publishedAt&apiKey=4f2defb0fc244f38ac04195d373a3f8b"
+// const urlall ="https://newsapi.org/v2/everything?q="
+// const apidata = "&from=2023-03-08&sortBy=publishedAt&apiKey=4f2defb0fc244f38ac04195d373a3f8b"
 
     var searchdata = document.querySelector("#searchdata").value
     var response = await fetch(urlall+searchdata+apidata, {method:"GET"})
