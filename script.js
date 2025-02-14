@@ -1,5 +1,5 @@
-const url = "https://inshortsapi.vercel.app/news?category=";
-
+// const url = "https://inshortsapi.vercel.app/news?category=";
+const url = "https://news-git-main-rajeshkumarmurugans-projects.vercel.app/news?category="
 async function getdata(catagory) {
   let display = document.querySelector(".display");
   display.innerHTML = `<div >
